@@ -1,0 +1,19 @@
+Did the learner use proper HTML syntax and structure?
+
+Did the learner use CSS to style the web page?
+
+Did the learner use CSS selectors effectively?
+
+Did the learner use JavaScript to modify the DOM?
+
+Did the learner create a React component using proper syntax and structure?
+
+Did the learner use React props and state correctly?
+
+Did the learner use JSX syntax correctly?
+
+Did the learner use React Hooks to manage state?
+
+Did the learner use the useState and useEffect Hooks correctly?
+
+Did the learner create a functional component using Hooks?
