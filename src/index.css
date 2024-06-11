@@ -1,0 +1,78 @@
+/* using CSS and Selectors to style the web page */
+
+body {
+    background-color: rgb(11, 43, 43);
+    color: rgb(234, 255, 116);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+    font-size: 30px;
+    opacity: .5;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
+
+#posts {
+    margin-left: 20px;
+    padding: 8px;
+}
+
+
+
+ul {
+    line-height: 30px;
+}
+
+#subheader {
+    font-size: 20px;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    height: 40px;
+}
+
+#subheader div{
+    position: relative;
+    top:8px;
+}
+
+footer {
+    font-size: 20px;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    border: 1px solid green;
+}
+#footText {
+    opacity: .5;
+}
+
+#main {
+    display: inline-flex;
+}
+
+#usingProps {
+    font-size: 20px;
+    border: 2px solid green;
+    padding: 20px;
+    margin: 20px;
+    width: 250px;
+    border-radius: 25px;
+
+}
+
+#managingState {
+    font-size: 20px;
+    border: 2px solid green;
+    padding: 30px;
+    margin: 20px;
+    /* width: 50%; */
+    border-radius: 25px;
+}
+
+button{
+    width: 100px;
+    height: 30px;
+}

@@ -8,16 +8,16 @@ import Posts from "./components/Posts"  // for API calls
 const greeting = <h1>Welcome, please enjoy your visit.</h1>
 
 // Using React to create element
-const msg1 = React.createElement('p', null, 'It\'s a very simple app.')
+const msg1 = React.createElement('p', null, 'Using JavaScript to modify the DOM')
 
 // using props
 function UseProps1(props) {
-  return <p>Hello, {props.name}</p>
+  return <p>Prop Name: {props.name}</p>
 }
 // using props 2
 class UseProps2 extends React.Component {
   render() {
-    return <p>Hello, {this.props.value}</p>
+    return <p>Prop Value: {this.props.value}</p>
   }
 }
 // React state using Class technique
@@ -83,38 +83,44 @@ function Masher() {
 const ThemeContext = React.createContext('light');
 // console.log("First, the theme is: " + ThemeContext.value)
 
-function Subheader(){
+function Subheader() {
   const theme = useContext(ThemeContext);
   // console.log("Now the theme is: " + theme)
-    return (
-      <header style={{
-        backgroundColor: theme === 'light' ? '#FFF' : '#000',
-        color: theme === 'light' ? '#000' : '#FFF'
-      }
-
-      }>
-      <p>This is the header2.</p>
-      </header>
-    )
-  }
+  return (
+    <div id="subheader" style={{
+      backgroundColor: theme === 'light' ? '#FFF' : '#041212',
+      color: theme === 'light' ? '#000' : '#FFF',
+    }
+    }><div>
+        <p style={{opacity: .7}}>This is the SUB header</p>
+      </div>
+    </div>
+  )
+}
 
 function App() {
   return (
     <div>
-      
+
       <ThemeContext.Provider value="dark">
         <Header />
         <Subheader />
         {greeting}
-        <UseProps1 name='Dude' />
-        <UseProps1 name='Vato' />
-        <UseProps2 value='Dude2' />
-        <UseProps2 value='Vato2' />
-        <Counter />
-        <Tapper />
-        <Masher />
         {msg1}
-        <Posts/>
+        <div id="main">
+          <div id="usingProps">Using Props: 
+            <UseProps1 name='Name1' />
+            <UseProps1 name='Name2' />
+            <UseProps2 value='Value1' />
+            <UseProps2 value='Value2' />
+          </div>
+          <div id="managingState">Managing State:
+            <Counter />
+            <Tapper />
+            <Masher />
+          </div>
+        </div>
+        <Posts />
         <Footer />
       </ThemeContext.Provider>
     </div>

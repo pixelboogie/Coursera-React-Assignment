@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react"
 
 function Posts(){
-
     const [posts, setPosts] = useState([]);
 
     // API call to retrive posts
@@ -17,8 +16,9 @@ function Posts(){
 
     // Display the posts
     return (
-        <div>
-        <p>Posts</p>
+        <div id="posts">
+        <h2>Posts</h2>
+        <p>This is a React component that makes an API call to retrive and then display posts. </p>
         <ul>
             {posts.map((post) => (
                 <li key={post.id}>{post.title}</li>
