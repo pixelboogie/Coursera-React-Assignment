@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useContext } from "react"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
+import Posts from "./components/Posts"  // for API calls
 
 
 // JSX expression
@@ -9,10 +10,11 @@ const greeting = <h1>Welcome, please enjoy your visit.</h1>
 // Using React to create element
 const msg1 = React.createElement('p', null, 'It\'s a very simple app.')
 
+// using props
 function UseProps1(props) {
   return <p>Hello, {props.name}</p>
 }
-
+// using props 2
 class UseProps2 extends React.Component {
   render() {
     return <p>Hello, {this.props.value}</p>
@@ -78,20 +80,43 @@ function Masher() {
   </div>
 }
 
+const ThemeContext = React.createContext('light');
+// console.log("First, the theme is: " + ThemeContext.value)
+
+function Subheader(){
+  const theme = useContext(ThemeContext);
+  // console.log("Now the theme is: " + theme)
+    return (
+      <header style={{
+        backgroundColor: theme === 'light' ? '#FFF' : '#000',
+        color: theme === 'light' ? '#000' : '#FFF'
+      }
+
+      }>
+      <p>This is the header2.</p>
+      </header>
+    )
+  }
+
 function App() {
   return (
     <div>
-      <Header />
-      {greeting}
-      <UseProps1 name='Dude' />
-      <UseProps1 name='Vato' />
-      <UseProps2 value='Dude2' />
-      <UseProps2 value='Vato2' />
-      <Counter />
-      <Tapper />
-      <Masher />
-      {msg1}
-      <Footer />
+      
+      <ThemeContext.Provider value="dark">
+        <Header />
+        <Subheader />
+        {greeting}
+        <UseProps1 name='Dude' />
+        <UseProps1 name='Vato' />
+        <UseProps2 value='Dude2' />
+        <UseProps2 value='Vato2' />
+        <Counter />
+        <Tapper />
+        <Masher />
+        {msg1}
+        <Posts/>
+        <Footer />
+      </ThemeContext.Provider>
     </div>
   )
 }
